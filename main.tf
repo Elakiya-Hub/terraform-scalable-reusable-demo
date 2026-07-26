@@ -22,3 +22,14 @@ module "ec2" {
     environment   = var.environment
 
 }
+
+module "s3" {
+  source = "./modules/s3"
+
+  for_each = var.bucket_names
+
+  bucket_name = each.value
+  environment = var.environment
+}
+
+ 

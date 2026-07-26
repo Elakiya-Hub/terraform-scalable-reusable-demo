@@ -35,3 +35,15 @@ variable "environment" {
     error_message = "Invalid environment. Allowed values are: dev, staging, prod."
   }
 }
+
+variable "bucket_names" {
+  description = "Names of S3 buckets"
+
+  type = set(string)
+
+  default = [
+    "elakiya-devops-demo-001",
+    "elakiya-devops-demo-002",
+    "elakiya-devops-demo-003"
+  ]
+}
