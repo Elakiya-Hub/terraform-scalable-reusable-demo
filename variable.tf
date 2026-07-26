@@ -47,3 +47,15 @@ variable "bucket_names" {
     "elakiya-devops-demo-003"
   ]
 }
+
+variable "ingress_ports" {
+  description = "List of ports to allow"
+  type        = list(number)
+
+  default = [
+    22,
+    80,
+    443,
+    8080
+  ]
+}
